@@ -1,4 +1,9 @@
 venv/
 __pycache__/
 *.pyc
-estado_cprm.json
+
+# ignora jsons…
+*.json
+
+# …MAS permite o estado do monitor
+!estado_cprm.json
