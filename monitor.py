@@ -37,6 +37,11 @@ def extrair_arquivos():
     status = response.status_code
     print(f"Status HTTP: {status}")
 
+    # ✅ só segue se for 2xx
+    if not (200 <= status < 300):
+        print("⚠️ Site ainda não disponível corretamente.")
+        return []
+
     soup = BeautifulSoup(response.text, "html.parser")
 
     itens = []
