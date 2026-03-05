@@ -32,7 +32,11 @@ def enviar_email(novos_itens):
 
 
 def extrair_arquivos():
-    response = requests.get(URL, timeout=20)
+    response = requests.get(
+        URL,
+        timeout=20,
+        headers={"User-Agent": "Mozilla/5.0"}
+    )
 
     status = response.status_code
     print(f"Status HTTP: {status}")
